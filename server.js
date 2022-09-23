@@ -26,7 +26,7 @@ app.use('/api/products', productRoutes)
 app.use('/api/orders', orderRoutes)
 
 
-app.get('/', (req, res) => { res.send('Hello from Express!')});
+app.get('/', (req, res) => { res.send('Hello from Express!')});//testing
 
 // connect to db
 mongoose.connect(process.env.MONGO_URI)
