@@ -1,16 +1,18 @@
 const express = require('express')
 const {
-  getProducts
+  getProducts,
+  getProduct
 } = require('../controllers/productController')
 
 const router = express.Router()
 
-// GET all workouts
+// GET all products
 router.get('/', getProducts)
 
-// GET a single workout
-/* router.get('/:id', getWorkout)
+// GET a single product
+router.get('/:id', getProduct)
 
+ /*
 // POST a new workout
 router.post('/', createWorkout)
 

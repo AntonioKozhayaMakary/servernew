@@ -7,23 +7,25 @@ const getProducts = async (req, res) => {
 
   res.status(200).json(products)
 }
-/* 
-// get a single workout
-const getWorkout = async (req, res) => {
+// get a single Product
+const getProduct = async (req, res) => {
   const { id } = req.params
 
   if (!mongoose.Types.ObjectId.isValid(id)) {
-    return res.status(404).json({ error: 'No such workout' })
+    return res.status(404).json({ error: 'No such Product' })
   }
 
-  const workout = await Workout.findById(id)
+  const Product = await Product.findById(id)
 
-  if (!workout) {
-    return res.status(404).json({ error: 'No such workout' })
+  if (!Product) {
+    return res.status(404).json({ error: 'No such Product' })
   }
 
-  res.status(200).json(workout)
+  res.status(200).json(Product)
 }
+/* 
+
+
 
 // create a new workout
 const createWorkout = async (req, res) => {
@@ -90,5 +92,6 @@ const deleteWorkout = async (req, res) => {
 } */
 
 module.exports = {
-  getProducts
+  getProducts,
+  getProduct
 }
