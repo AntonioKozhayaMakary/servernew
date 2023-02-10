@@ -19,7 +19,11 @@ app.use((req, res, next) => {
   next()
 })
 
-app.use(cors());
+app.use(cors({
+  origin: "https://bumkereshop3400.netlify.app",
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  allowedHeaders: ["Content-Type", "Authorization"]
+}));
 
 // routes
 app.use('/api/products', productRoutes)
